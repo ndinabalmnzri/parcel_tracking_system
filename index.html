@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TRANZIO PARCELLO — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <img src="logo.png" alt="TRANZIO logo" class="site-logo">
+    <div class="title-block">
+      <h1 class="brand">TRANZIO PARCELLO</h1>
+      <div class="subtitle">ParcelTracker – TRANZIO</div>
+      <div class="tagline"><em>"Track. Trust. Tranzio."</em></div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="tracking.html">Tracking</a>
+      <a href="status.html">Status</a>
+      <a href="branches.html">Branches</a>
+      <a href="index.html" class="active">Login</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button id="loginTab" class="tab active" onclick="showAuth('login')">Login</button>
+        <button id="signupTab" class="tab" onclick="showAuth('signup')">Sign Up</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+        <h2>Login</h2>
+        <label>Email
+          <input type="email" id="loginEmail" required placeholder="you@example.com">
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" required placeholder="••••••••">
+        </label>
+        <div class="row-between">
+          <label class="checkbox-label">
+            <input type="checkbox" id="rememberMe"> 
+            Remember Me
+          </label>
+          <a href="#" onclick="forgotPassword(event)" class="small-link">Forgot password?</a>
+        </div>
+        <button class="btn primary" type="submit">Login</button>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form id="signupForm" class="auth-form hidden" onsubmit="handleSignup(event)">
+        <h2>Sign Up (optional)</h2>
+        <label>Full name
+          <input type="text" id="signupName" placeholder="Your full name">
+        </label>
+        <label>Email
+          <input type="email" id="signupEmail" placeholder="you@example.com">
+        </label>
+        <label>Password
+          <input type="password" id="signupPassword" placeholder="Choose a password">
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="signupUpdates"> 
+          Receive Email Updates
+        </label>
+        <button class="btn" type="submit">Create account</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© TRANZIO PARCELLO — Parcel Tracking System</small>
+  </footer>
+</body>
+</html>
+<script src="script.js"></script>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TRANZIO — Track Parcel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="header-left">
+      <img src="logo.png" alt="TRANZIO logo" class="site-logo">
+      <div class="title-block">
+        <h1 class="brand small-title">TRANZIO PARCELLO</h1>
+        <div class="subtitle small-sub">ParcelTracker – TRANZIO</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="tracking.html" class="active">Tracking</a>
+      <a href="status.html">Status</a>
+      <a href="branches.html">Branches</a>
+      <a href="index.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="tracking-card">
+      <h2>Track your parcel</h2>
+      <form id="trackForm" onsubmit="searchTracking(event)" autocomplete="off">
+        <label>Tracking number
+          <input type="text" id="trackNumber" placeholder="Enter tracking number" required>
+        </label>
+
+        <label>State
+          <select id="stateSelect" required onchange="populateBranchList()">
+            <option value="">-- Select state --</option>
+          </select>
+        </label>
+
+        <label>Branch
+          <select id="branchSelect" required>
+            <option value="">-- Select branch --</option>
+          </select>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="emailUpdates"> Receive Email Updates
+        </label>
+
+        <div class="row-between">
+          <button class="btn primary" type="submit">Search</button>
+          <button type="button" class="btn" onclick="generateRandomAndShow()">Random sample</button>
+        </div>
+      </form>
+
+      <div id="trackResult" class="track-result hidden">
+        <h3>Current status</h3>
+        <p><strong>Tracking:</strong> <span id="resNumber"></span></p>
+        <p><strong>Location:</strong> <span id="resLocation"></span></p>
+        <p><strong>Current:</strong> <span id="resCurrent"></span></p>
+        <p><strong>Estimated delivery:</strong> <span id="resEta"></span></p>
+        <div class="row-between">
+          <button class="btn" onclick="showFullStatus()">Show / Full Status</button>
+          <button class="btn secondary" onclick="resetTracking()">Reset</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© TRANZIO PARCELLO</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

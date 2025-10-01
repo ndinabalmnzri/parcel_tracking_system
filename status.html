@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TRANZIO — Parcel Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="header-left">
+      <img src="logo.png" alt="TRANZIO logo" class="site-logo">
+      <div class="title-block">
+        <h1 class="brand small-title">TRANZIO PARCELLO</h1>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="tracking.html">Tracking</a>
+      <a href="status.html" class="active">Status</a>
+      <a href="branches.html">Branches</a>
+      <a href="index.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="status-card">
+      <h2>Full status timeline</h2>
+      <div id="timelineContainer">
+        <!-- Timeline entries appended here by script.js -->
+      </div>
+      <div class="row-between" style="margin-top:16px;">
+        <button class="btn" onclick="window.history.back()">Back</button>
+        <button class="btn secondary" onclick="clearStatus()">Clear</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© TRANZIO PARCELLO</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
